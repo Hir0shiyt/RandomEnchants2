@@ -39,7 +39,6 @@ public class ModEnchantments {
     public static final RegistryObject<Enchantment> TORCHES = ENCHANTMENTS.register("torches", () -> new Torches(Enchantment.Rarity.RARE, ModEnchantments.SHOOTABLE, new EquipmentSlot[]{EquipmentSlot.MAINHAND}));
     public static final RegistryObject<Enchantment> TRUE_SHOT = ENCHANTMENTS.register("true_shot", () -> new TrueShot(Enchantment.Rarity.RARE, ModEnchantments.SHOOTABLE, new EquipmentSlot[]{EquipmentSlot.MAINHAND}));
     public static final RegistryObject<Enchantment> EQUAL_MINE = ENCHANTMENTS.register("equal_mine", () -> new EqualMine(Enchantment.Rarity.RARE, EnchantmentCategory.DIGGER, new EquipmentSlot[]{EquipmentSlot.MAINHAND}));
-    public static final RegistryObject<Enchantment> ASSIMILATION = ENCHANTMENTS.register("assimilation", () -> new Assimilation(Enchantment.Rarity.VERY_RARE, EnchantmentCategory.DIGGER, new EquipmentSlot[]{EquipmentSlot.MAINHAND}));
     public static final RegistryObject<Enchantment> TRANSPOSITION = ENCHANTMENTS.register("transposition", () -> new Transposition(Enchantment.Rarity.RARE, EnchantmentCategory.BOW, new EquipmentSlot[]{EquipmentSlot.MAINHAND}));
     public static final RegistryObject<Enchantment> RICOCHET = ENCHANTMENTS.register("ricochet", () -> new Ricochet(Enchantment.Rarity.RARE, ModEnchantments.SHOOTABLE, new EquipmentSlot[]{EquipmentSlot.MAINHAND}));
     public static final RegistryObject<Enchantment> EXPLODING = ENCHANTMENTS.register("exploding", () -> new Exploding(Enchantment.Rarity.RARE, ModEnchantments.SHOOTABLE, new EquipmentSlot[]{EquipmentSlot.MAINHAND}));
@@ -73,6 +72,7 @@ public class ModEnchantments {
     public static final RegistryObject<Enchantment> FUMBLING_CURSE = ENCHANTMENTS.register("fumbling_curse", () -> new FumblingCurse(Enchantment.Rarity.RARE, EnchantmentCategory.DIGGER, new EquipmentSlot[]{EquipmentSlot.MAINHAND}));
     public static final RegistryObject<Enchantment> SHADOWS_CURSE = ENCHANTMENTS.register("shadows_curse", () -> new ShadowsCurse(Enchantment.Rarity.RARE, ModEnchantments.ALL_ITEMS, new EquipmentSlot[]{EquipmentSlot.HEAD, EquipmentSlot.CHEST, EquipmentSlot.LEGS, EquipmentSlot.FEET, EquipmentSlot.MAINHAND, EquipmentSlot.OFFHAND}));
     public static final RegistryObject<Enchantment> LINGERING_SHADOWS_CURSE = ENCHANTMENTS.register("lingering_shadows_curse", () -> new LingeringShadowsCurse(Enchantment.Rarity.VERY_RARE, ModEnchantments.TOOLSANDWEAPONS, new EquipmentSlot[]{EquipmentSlot.HEAD, EquipmentSlot.CHEST, EquipmentSlot.LEGS, EquipmentSlot.FEET, EquipmentSlot.MAINHAND, EquipmentSlot.OFFHAND}));
+    public static final RegistryObject<Enchantment> DARK_KINGDOM_CURSE = ENCHANTMENTS.register("dark_kingdom_curse", () -> new DarkKingdomCurse(Enchantment.Rarity.RARE, ModEnchantments.ALL_ITEMS, new EquipmentSlot[]{EquipmentSlot.MAINHAND, EquipmentSlot.OFFHAND, EquipmentSlot.HEAD, EquipmentSlot.CHEST, EquipmentSlot.LEGS, EquipmentSlot.FEET}));
 
     public static void register(IEventBus eventBus) {
         ENCHANTMENTS.register(eventBus);
