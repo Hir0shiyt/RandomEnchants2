@@ -24,6 +24,7 @@ import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
 
 import java.util.List;
+import java.util.Random;
 
 @Mod.EventBusSubscriber (modid = RandomEnchants2.MOD_ID, bus = Mod.EventBusSubscriber.Bus.FORGE)
 public class Dungeoneering extends Enchantment {
@@ -71,12 +72,36 @@ public class Dungeoneering extends Enchantment {
 
                 if (enchantmentLevel > 0) {
                     LootContext.Builder lootBuilder = new LootContext.Builder(serverWorld)
-                            .withRandom(serverWorld.random)
                             .withParameter(LootContextParams.THIS_ENTITY, player)
                             .withParameter(LootContextParams.ORIGIN, victim.position())
                             .withParameter(LootContextParams.DAMAGE_SOURCE, event.getSource());
 
-                    LootTable lootTable = serverWorld.getServer().getLootTables().get(new ResourceLocation("minecraft", "chests/simple_dungeon"));
+                        String[] multipleLootTables = {
+                                "chests/simple_dungeon",
+                                "chests/desert_temple",
+                                "chests/jungle_temple",
+                                "chests/abandoned_mineshaft"
+                        };
+
+                        String[] defaultLootTable = {
+                                "chests/simple_dungeon"
+                        };
+
+                        String[] chosenLootTables = null;
+
+                    if (ModConfig.ServerConfig.dungeoneeringLootTableConfig.get() == ModConfig.Restriction2.DISABLED) {
+                        chosenLootTables = defaultLootTable;
+                    }
+                    if (ModConfig.ServerConfig.dungeoneeringLootTableConfig.get() == ModConfig.Restriction2.ENABLED) {
+                        chosenLootTables = multipleLootTables;
+                    }
+
+                    Random random = new Random();
+                    int randomIndex = random.nextInt(chosenLootTables.length);
+                    String chosenLootTable = chosenLootTables[randomIndex];
+                    System.out.println("Chosen loot table: " + chosenLootTable);
+
+                    LootTable lootTable = serverWorld.getServer().getLootTables().get(new ResourceLocation("minecraft", chosenLootTable));
                     List<ItemStack> generatedLoot = lootTable.getRandomItems(lootBuilder.create(LootContextParamSets.ENTITY));
 
                     int numberOfDrops = enchantmentLevel;
