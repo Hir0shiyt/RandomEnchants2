@@ -93,7 +93,7 @@ public class DimensionalShuffle extends Enchantment {
             double newY = y + (RANDOM.nextDouble() - 0.5) * radius;
             double newZ = z + (RANDOM.nextDouble() - 0.5) * radius;
 
-            BlockPos candidatePos = new BlockPos(newX, newY, newZ);
+            BlockPos candidatePos = new BlockPos((int) newX, (int) newY, (int) newZ);
 
             if (!world.isLoaded(candidatePos)) {
                 continue;

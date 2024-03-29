@@ -78,7 +78,7 @@ public class TrueLifeSteal extends Enchantment {
             if (shooter instanceof Player && EnchantUtils.hasEnch((Player) shooter, ModEnchantments.TRUE_LIFE_STEAL.get())) {
                 HitResult hitEntity = event.getRayTraceResult();
                 if (hitEntity != null) {
-                    float damage = (float) arrow.getDeltaMovement().length(); // You can adjust this calculation based on your needs
+                    float damage = (float) arrow.getDeltaMovement().length();
                     Minecraft.getInstance().execute(() -> {
                         if (hitEntity.getType() == HitResult.Type.ENTITY) {
                             Entity targetEntity = ((EntityHitResult) hitEntity).getEntity();
