@@ -66,7 +66,7 @@ public class StoneBound extends Enchantment {
     @SubscribeEvent
     public void onBreakBlock(PlayerEvent.BreakSpeed event) {
         Player player = event.getPlayer();
-        if ((EnchantmentHelper.getEnchantmentLevel(ModEnchantments.STONE_BOUND, player) > 0)) {
+        if ((EnchantmentHelper.getEnchantmentLevel(ModEnchantments.STONE_BOUND ,player) > 0)) {
             float oldSpeed = event.getOriginalSpeed();
             ItemStack stack = player.getMainHandItem();
             float increase = .02f * stack.getDamageValue();

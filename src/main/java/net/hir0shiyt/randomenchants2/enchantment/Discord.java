@@ -36,7 +36,6 @@ public class Discord extends Enchantment {
     @Override
     public boolean canApplyAtEnchantingTable(ItemStack stack) {
             return ModConfig.ServerConfig.discordConfig.get() != ModConfig.Restriction.DISABLED && super.canApplyAtEnchantingTable(stack);
-
     }
 
     @Override

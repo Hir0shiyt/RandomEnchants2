@@ -69,7 +69,7 @@ public class StoneLover extends Enchantment {
                 if (block == Blocks.STONE && player.getRandom().nextFloat() < 0.8f) {
                     int repairAmount = 2;
                     mainHandStack.setDamageValue(Math.max(0, mainHandStack.getDamageValue() - repairAmount));
-                    mainHandStack.setPopTime(5); // Show the "pop" animation for a brief time
+                    mainHandStack.setPopTime(5);
                 }
             }
         }
