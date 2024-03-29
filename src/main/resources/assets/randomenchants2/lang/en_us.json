@@ -81,7 +81,7 @@
   "enchantment.randomenchants2.dimensional_shuffle.desc" : "Get out of a very risky situation",
 
 
-  "enchantment.randomenchants2.breaking_curse" : "Breaking Curse",
+  "enchantment.randomenchants2.breaking_curse" : "Breaking",
   "enchantment.randomenchants2.breaking_curse.desc" : "Items Break way faster",
   "enchantment.randomenchants2.butter_fingers_curse" : "Butter Fingers",
   "enchantment.randomenchants2.butter_fingers_curse.desc" : "Items slip from your hand",
@@ -90,5 +90,7 @@
   "enchantment.randomenchants2.shadows_curse" : "Shadows",
   "enchantment.randomenchants2.shadows_curse.desc" : "Equipment weakens in the light",
   "enchantment.randomenchants2.lingering_shadows_curse" : "Lingering Shadows",
-  "enchantment.randomenchants2.lingering_shadows_curse.desc" : "Careful, don't attack any mobs"
+  "enchantment.randomenchants2.lingering_shadows_curse.desc" : "Careful, don't attack any mobs",
+  "enchantment.randomenchants2.dark_kingdom_curse" : "Dark Kingdom",
+  "enchantment.randomenchants2.dark_kingdom_curse.desc" : "The kingdom of the darkness rises against you!"
 }
