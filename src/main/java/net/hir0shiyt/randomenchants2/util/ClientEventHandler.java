@@ -4,11 +4,9 @@ import net.hir0shiyt.randomenchants2.RandomEnchants2;
 import net.hir0shiyt.randomenchants2.config.ModConfig;
 import net.hir0shiyt.randomenchants2.enchantment.ModEnchantments;
 import net.minecraft.ChatFormatting;
-import net.minecraft.nbt.ListTag;
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.entity.player.Player;
-import net.minecraft.world.item.EnchantedBookItem;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.enchantment.EnchantmentHelper;
 import net.minecraftforge.api.distmarker.Dist;
@@ -32,11 +30,6 @@ public class ClientEventHandler {
             if (event.getItemStack() != stack) return;
             tooltip.add(Component.literal("Mining Bonus: " + ChatFormatting.GREEN + "+" + stack.getDamageValue() * .02));
             tooltip.add(Component.literal("Damage Penalty: " + ChatFormatting.RED + "-" + stack.getDamageValue() * .02));
-            if (event.getItemStack().getItem() instanceof EnchantedBookItem) {
-                ListTag nbtTagList = EnchantedBookItem.getEnchantments(event.getItemStack());
-                for (int i = 0; i < nbtTagList.size(); ++i) {
-                }
-            }
         }
 
         else if ((EnchantUtils.hasEnch(player, ModEnchantments.DIMENSIONAL_SHUFFLE.get()))) {
