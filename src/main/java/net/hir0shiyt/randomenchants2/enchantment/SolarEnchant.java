@@ -85,7 +85,13 @@ public class SolarEnchant extends Enchantment {
         int legsLvl = EnchantmentHelper.getItemEnchantmentLevel(ModEnchantments.SOLAR_ENCHANT.get(), legs);
         int feetLvl = EnchantmentHelper.getItemEnchantmentLevel(ModEnchantments.SOLAR_ENCHANT.get(), feet);
 
-        if (mainHandStack.isDamaged() || offHandStack.isDamaged() || head.isDamaged() || chest.isDamaged() || legs.isDamaged() || feet.isDamaged() && mainHandLevel > 0) {
+        if ((mainHandStack.isDamaged() && mainHandLevel > 0) ||
+                (offHandStack.isDamaged() && offHandLevel > 0) ||
+                (head.isDamaged() && headLvl > 0) ||
+                (chest.isDamaged() && chestLvl > 0) ||
+                (legs.isDamaged() && legsLvl > 0) ||
+                (feet.isDamaged() && feetLvl > 0)) {
+
             BlockPos playerPos = event.player.blockPosition();
             int skyLight = world.getBrightness(LightLayer.SKY, playerPos);
             int blockLight = world.getBrightness(LightLayer.BLOCK, playerPos);
