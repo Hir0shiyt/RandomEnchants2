@@ -79,6 +79,9 @@
   "enchantment.randomenchants2.ethereal_embrace.desc" : "Tiene la posibilidad de atravesar los ataques enemigos",
   "enchantment.randomenchants2.dimensional_shuffle" : "Barajar Dimensional",
   "enchantment.randomenchants2.dimensional_shuffle.desc" : "Sal de una situación muy arriesgada",
+  "enchantment.randomenchants2.kinetic_protection" : "Kinetic Protection",
+  "enchantment.randomenchants2.kinetic_protection.desc" : "Elytra damage protection",
+  "note_comment" : "Translation should be done by Satrapie(GitHub)",
 
 
   "enchantment.randomenchants2.breaking_curse" : "Maldición de Ruptura",

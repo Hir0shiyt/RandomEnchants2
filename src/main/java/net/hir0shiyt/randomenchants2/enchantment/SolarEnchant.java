@@ -78,14 +78,21 @@ public class SolarEnchant extends Enchantment {
         ItemStack chest = event.player.getItemBySlot(EquipmentSlot.CHEST);
         ItemStack legs = event.player.getItemBySlot(EquipmentSlot.LEGS);
         ItemStack feet = event.player.getItemBySlot(EquipmentSlot.FEET);
-        int mainHandLevel = EnchantmentHelper.getItemEnchantmentLevel(ModEnchantments.SOLAR_ENCHANT, mainHandStack);
-        int offHandLevel = EnchantmentHelper.getItemEnchantmentLevel(ModEnchantments.SOLAR_ENCHANT, offHandStack);
-        int headLvl = EnchantmentHelper.getItemEnchantmentLevel(ModEnchantments.SOLAR_ENCHANT, head);
-        int chestLvl = EnchantmentHelper.getItemEnchantmentLevel(ModEnchantments.SOLAR_ENCHANT, chest);
-        int legsLvl = EnchantmentHelper.getItemEnchantmentLevel(ModEnchantments.SOLAR_ENCHANT, legs);
-        int feetLvl = EnchantmentHelper.getItemEnchantmentLevel(ModEnchantments.SOLAR_ENCHANT, feet);
 
-        if (mainHandStack.isDamaged() || offHandStack.isDamaged() || head.isDamaged() || chest.isDamaged() || legs.isDamaged() || feet.isDamaged() && mainHandLevel > 0) {
+        if (((mainHandStack.isDamaged() && EnchantmentHelper.getItemEnchantmentLevel(ModEnchantments.SOLAR_ENCHANT, mainHandStack) > 0) ||
+                (offHandStack.isDamaged() && EnchantmentHelper.getItemEnchantmentLevel(ModEnchantments.SOLAR_ENCHANT, offHandStack) > 0) ||
+                (head.isDamaged() && EnchantmentHelper.getItemEnchantmentLevel(ModEnchantments.SOLAR_ENCHANT, head) > 0) ||
+                (chest.isDamaged() && EnchantmentHelper.getItemEnchantmentLevel(ModEnchantments.SOLAR_ENCHANT, chest) > 0) ||
+                (legs.isDamaged() && EnchantmentHelper.getItemEnchantmentLevel(ModEnchantments.SOLAR_ENCHANT, legs) > 0) ||
+                (feet.isDamaged() && EnchantmentHelper.getItemEnchantmentLevel(ModEnchantments.SOLAR_ENCHANT, feet) > 0))) {
+
+            int mainHandLevel = EnchantmentHelper.getItemEnchantmentLevel(ModEnchantments.SOLAR_ENCHANT, mainHandStack);
+            int offHandLevel = EnchantmentHelper.getItemEnchantmentLevel(ModEnchantments.SOLAR_ENCHANT, offHandStack);
+            int headLvl = EnchantmentHelper.getItemEnchantmentLevel(ModEnchantments.SOLAR_ENCHANT, head);
+            int chestLvl = EnchantmentHelper.getItemEnchantmentLevel(ModEnchantments.SOLAR_ENCHANT, chest);
+            int legsLvl = EnchantmentHelper.getItemEnchantmentLevel(ModEnchantments.SOLAR_ENCHANT, legs);
+            int feetLvl = EnchantmentHelper.getItemEnchantmentLevel(ModEnchantments.SOLAR_ENCHANT, feet);
+
             BlockPos playerPos = event.player.blockPosition();
             int skyLight = world.getBrightness(LightLayer.SKY, playerPos);
             int blockLight = world.getBrightness(LightLayer.BLOCK, playerPos);

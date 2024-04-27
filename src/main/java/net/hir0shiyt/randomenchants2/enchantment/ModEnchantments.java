@@ -22,6 +22,7 @@ public class ModEnchantments {
     public static final EnchantmentCategory SHOOTABLE = EnchantmentCategory.create("shootable", item -> item instanceof BowItem || item instanceof CrossbowItem);
     public static final EnchantmentCategory SHIELDS = EnchantmentCategory.create("shields", ShieldItem.class::isInstance);
     public static final EnchantmentCategory AXES = EnchantmentCategory.create("axes", AxeItem.class::isInstance);
+    public static final EnchantmentCategory ELYTRA = EnchantmentCategory.create("elytra_item", item -> item instanceof ElytraItem);
     public static final EnchantmentCategory TOOLSANDWEAPONS = EnchantmentCategory.create("tools&weapons", item -> item instanceof SwordItem || item instanceof AxeItem || item instanceof ShovelItem || item instanceof HoeItem || item instanceof BowItem || item instanceof CrossbowItem);
     public static final EnchantmentCategory ALL_ITEMS = EnchantmentCategory.create("all_items", Item.class::isInstance);
 
@@ -65,6 +66,8 @@ public class ModEnchantments {
     public static final Enchantment CHAOS_STRIKE = new ChaosStrike(Enchantment.Rarity.VERY_RARE, EnchantmentCategory.WEAPON, new EquipmentSlot[]{EquipmentSlot.MAINHAND});
     public static final Enchantment ETHEREAL_EMBRACE = new EtherealEmbrace(Enchantment.Rarity.VERY_RARE, EnchantmentCategory.ARMOR_CHEST, new EquipmentSlot[]{EquipmentSlot.CHEST});
     public static final Enchantment DIMENSIONAL_SHUFFLE = new DimensionalShuffle(Enchantment.Rarity.VERY_RARE, EnchantmentCategory.ARMOR_CHEST, new EquipmentSlot[]{EquipmentSlot.CHEST});
+    public static final Enchantment KINETIC_PROTECTION = new KineticProtection(Enchantment.Rarity.VERY_RARE, ModEnchantments.ELYTRA, new EquipmentSlot[]{EquipmentSlot.CHEST});
+
 
     //REGISTER CURSES
     public static final Enchantment BREAKING_CURSE = new BreakingCurse(Enchantment.Rarity.RARE, EnchantmentCategory.BREAKABLE, new EquipmentSlot[]{EquipmentSlot.MAINHAND});
@@ -116,6 +119,7 @@ public class ModEnchantments {
         register(event.getRegistry(), "chaos_strike", CHAOS_STRIKE);
         register(event.getRegistry(), "ethereal_embrace", ETHEREAL_EMBRACE);
         register(event.getRegistry(), "dimensional_shuffle", DIMENSIONAL_SHUFFLE);
+        register(event.getRegistry(), "kinetic_protection", KINETIC_PROTECTION);
 
         //CURSE REGISTRIES
         register(event.getRegistry(), "breaking_curse", BREAKING_CURSE);
