@@ -37,22 +37,22 @@ public class DarkKingdomCurse extends Enchantment {
 
     @Override
     public boolean canEnchant(ItemStack stack) {
-        return ModConfig.ServerConfig.assimilationConfig.get() != ModConfig.Restriction.DISABLED && super.canEnchant(stack);
+        return ModConfig.ServerConfig.darkKingdomConfig.get() != ModConfig.Restriction.DISABLED && super.canEnchant(stack);
     }
 
     @Override
     public boolean canApplyAtEnchantingTable(ItemStack stack) {
-            return ModConfig.ServerConfig.assimilationConfig.get() != ModConfig.Restriction.DISABLED && super.canApplyAtEnchantingTable(stack);
+            return ModConfig.ServerConfig.darkKingdomConfig.get() != ModConfig.Restriction.DISABLED && super.canApplyAtEnchantingTable(stack);
     }
 
     @Override
     public boolean isAllowedOnBooks() {
-        return ModConfig.ServerConfig.assimilationConfig.get() == ModConfig.Restriction.ENABLED;
+        return ModConfig.ServerConfig.darkKingdomConfig.get() == ModConfig.Restriction.ENABLED;
     }
 
     @Override
     public boolean isTreasureOnly() {
-        return ModConfig.ServerConfig.assimilationConfig.get() == ModConfig.Restriction.TREASURE;
+        return ModConfig.ServerConfig.darkKingdomConfig.get() == ModConfig.Restriction.TREASURE;
     }
 
     @SubscribeEvent
