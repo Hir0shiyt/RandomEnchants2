@@ -63,7 +63,8 @@ public class TrueLifeSteal extends Enchantment {
             if (EnchantUtils.hasEnch(player, ModEnchantments.TRUE_LIFE_STEAL.get())) {
                 LivingEntity entity = event.getEntity();
                 float damage = event.getAmount();
-                entity.hurt(DamageSource.GENERIC, damage*1.5f);
+                DamageSource source = entity.damageSources().generic();
+                entity.hurt(source, damage * 1.5f);
                 player.heal(damage);
             }
         }
@@ -83,7 +84,8 @@ public class TrueLifeSteal extends Enchantment {
                         if (hitEntity.getType() == HitResult.Type.ENTITY) {
                             Entity targetEntity = ((EntityHitResult) hitEntity).getEntity();
                             if (targetEntity instanceof LivingEntity) {
-                                ((LivingEntity) targetEntity).hurt(DamageSource.GENERIC, damage * 1.5f);
+                                DamageSource source = (targetEntity).damageSources().generic();
+                                (targetEntity).hurt(source, damage * 1.5f);
                                 ((Player) shooter).heal(damage);
                             }
                         }

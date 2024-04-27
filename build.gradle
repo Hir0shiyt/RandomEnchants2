@@ -18,7 +18,7 @@ plugins {
 apply plugin: 'net.minecraftforge.gradle'
 apply plugin: 'org.parchmentmc.librarian.forgegradle'
 
-version = '6.4-1.19.3'
+version = '6.9-1.19.3'
 group = 'net.hir0shiyt.randomenchants2' // http://maven.apache.org/guides/mini/guide-naming-conventions.html
 archivesBaseName = 'randomenchants2'
 
