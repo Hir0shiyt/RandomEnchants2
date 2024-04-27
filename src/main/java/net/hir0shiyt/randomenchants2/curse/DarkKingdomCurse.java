@@ -61,7 +61,8 @@ public class DarkKingdomCurse extends Enchantment {
             return;
 
         Player player = event.player;
-        if (EnchantUtils.hasEnch(player, ModEnchantments.DARK_KINGDOM_CURSE.get())) {
+        ItemStack chest = player.getItemBySlot(EquipmentSlot.CHEST);
+        if (EnchantUtils.hasEnch(chest, ModEnchantments.DARK_KINGDOM_CURSE.get())) {
             int radius = 32;
             Level world = player.getCommandSenderWorld();
 
