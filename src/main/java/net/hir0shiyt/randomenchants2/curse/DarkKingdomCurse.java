@@ -37,22 +37,22 @@ public class DarkKingdomCurse extends Enchantment {
 
     @Override
     public boolean canEnchant(ItemStack stack) {
-        return ModConfig.ServerConfig.assimilationConfig.get() != ModConfig.Restriction.DISABLED && super.canEnchant(stack);
+        return ModConfig.ServerConfig.darkKingdomConfig.get() != ModConfig.Restriction.DISABLED && super.canEnchant(stack);
     }
 
     @Override
     public boolean canApplyAtEnchantingTable(ItemStack stack) {
-            return ModConfig.ServerConfig.assimilationConfig.get() != ModConfig.Restriction.DISABLED && super.canApplyAtEnchantingTable(stack);
+            return ModConfig.ServerConfig.darkKingdomConfig.get() != ModConfig.Restriction.DISABLED && super.canApplyAtEnchantingTable(stack);
     }
 
     @Override
     public boolean isAllowedOnBooks() {
-        return ModConfig.ServerConfig.assimilationConfig.get() == ModConfig.Restriction.ENABLED;
+        return ModConfig.ServerConfig.darkKingdomConfig.get() == ModConfig.Restriction.ENABLED;
     }
 
     @Override
     public boolean isTreasureOnly() {
-        return ModConfig.ServerConfig.assimilationConfig.get() == ModConfig.Restriction.TREASURE;
+        return ModConfig.ServerConfig.darkKingdomConfig.get() == ModConfig.Restriction.TREASURE;
     }
 
     @SubscribeEvent
@@ -61,16 +61,16 @@ public class DarkKingdomCurse extends Enchantment {
             return;
 
         Player player = event.player;
-        ItemStack chestplate = player.getItemBySlot(EquipmentSlot.CHEST);
-        if (EnchantUtils.hasEnch(chestplate, ModEnchantments.DARK_KINGDOM_CURSE.get())) {
+        ItemStack chest = player.getItemBySlot(EquipmentSlot.CHEST);
+        if (EnchantUtils.hasEnch(chest, ModEnchantments.DARK_KINGDOM_CURSE.get())) {
             int radius = 32;
             Level world = player.getCommandSenderWorld();
 
             for (Mob mob : world.getEntitiesOfClass(Mob.class, player.getBoundingBox().inflate(radius))) {
                 double distanceSq = player.distanceToSqr(mob);
                 if (distanceSq <= radius * radius) {
-                    mob.addEffect(new MobEffectInstance(MobEffects.DAMAGE_BOOST, 999, 3, false, false));
-                    mob.addEffect(new MobEffectInstance(MobEffects.MOVEMENT_SPEED, 999, 2, false, false));
+                    mob.addEffect(new MobEffectInstance(MobEffects.DAMAGE_BOOST, 99999, 3, false, false));
+                    mob.addEffect(new MobEffectInstance(MobEffects.MOVEMENT_SPEED, 99999, 2, false, false));
                     mob.setTarget(player);
                 }
             }
