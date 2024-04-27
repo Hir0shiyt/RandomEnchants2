@@ -30,7 +30,6 @@ public class ModConfig {
         public static ForgeConfigSpec.EnumValue<Restriction> torchesConfig;
         public static ForgeConfigSpec.EnumValue<Restriction> trueShotConfig;
         public static ForgeConfigSpec.EnumValue<Restriction> equalMineConfig;
-        public static ForgeConfigSpec.EnumValue<Restriction> assimilationConfig;
         public static ForgeConfigSpec.EnumValue<Restriction> transpositionConfig;
         public static ForgeConfigSpec.EnumValue<Restriction> ricochetConfig;
         public static ForgeConfigSpec.EnumValue<Restriction> explodingConfig;
@@ -56,6 +55,7 @@ public class ModConfig {
         public static ForgeConfigSpec.EnumValue<Restriction> etherealEmbraceConfig;
         public static ForgeConfigSpec.EnumValue<Restriction> dimensionalShuffleConfig;
         public static ForgeConfigSpec.EnumValue<Restriction> zenSanctuaryConfig;
+        public static ForgeConfigSpec.EnumValue<Restriction> kineticProtectionConfig;
 
         //curses
         public static ForgeConfigSpec.EnumValue<Restriction> breakingConfig;
@@ -63,6 +63,7 @@ public class ModConfig {
         public static ForgeConfigSpec.EnumValue<Restriction> fumblingConfig;
         public static ForgeConfigSpec.EnumValue<Restriction> shadowsConfig;
         public static ForgeConfigSpec.EnumValue<Restriction> lingeringShadowsConfig;
+        public static ForgeConfigSpec.EnumValue<Restriction> darkKingdomConfig;
 
         //extra
         public static ForgeConfigSpec.EnumValue<Restriction2> dungeoneeringLootTableConfig;
@@ -101,7 +102,7 @@ public class ModConfig {
                     .defineEnum("trueShotConfig", ModConfig.Restriction.ENABLED);
             equalMineConfig = builder.comment("Restriction for Equal Mine Enchantment")
                     .defineEnum("equalMineConfig", ModConfig.Restriction.ENABLED);
-            assimilationConfig = builder.comment("Restriction for Assimilation Enchantment")
+            darkKingdomConfig = builder.comment("Restriction for DarkKingdomCurse Enchantment")
                     .defineEnum("assimilationConfig", ModConfig.Restriction.ENABLED);
             transpositionConfig = builder.comment("Restriction for Transposition Enchantment")
                     .defineEnum("transpositionConfig", ModConfig.Restriction.ENABLED);
@@ -183,6 +184,13 @@ public class ModConfig {
             zenSanctuaryConfig = builder.comment("Restriction for Zen Sanctuary Enchantment")
                     .comment("Extra Enchantments are Disabled by Default, use ENABLED if you want to enable them!")
                     .defineEnum("zenSanctuaryConfig", Restriction.DISABLED);
+
+            kineticProtectionConfig = builder.comment("Restriction for Kinetic Protection Enchantment")
+                    .comment("Extra Enchantments are Disabled by Default, use ENABLED if you want to enable them!")
+                    .defineEnum("kineticProtectionConfig", Restriction.DISABLED);
+
+            darkKingdomConfig = builder.comment("Restriction for DarkKingdomCurse Enchantment")
+                    .defineEnum("darkKingdomConfig", Restriction.DISABLED);
 
 
             builder.pop();

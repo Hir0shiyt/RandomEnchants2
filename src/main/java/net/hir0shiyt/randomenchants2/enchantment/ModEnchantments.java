@@ -21,6 +21,7 @@ public class ModEnchantments {
     public static final EnchantmentCategory SHOOTABLE = EnchantmentCategory.create("shootable", item -> item instanceof BowItem || item instanceof CrossbowItem);
     public static final EnchantmentCategory SHIELDS = EnchantmentCategory.create("shields", ShieldItem.class::isInstance);
     public static final EnchantmentCategory AXES = EnchantmentCategory.create("axes", AxeItem.class::isInstance);
+    public static final EnchantmentCategory ELYTRA = EnchantmentCategory.create("elytra_item", item -> item instanceof ElytraItem);
     public static final EnchantmentCategory TOOLSANDWEAPONS = EnchantmentCategory.create("tools&weapons", item -> item instanceof SwordItem || item instanceof AxeItem || item instanceof ShovelItem || item instanceof HoeItem || item instanceof BowItem || item instanceof CrossbowItem);
     public static final EnchantmentCategory ALL_ITEMS = EnchantmentCategory.create("all_items", Item.class::isInstance);
 
@@ -64,6 +65,7 @@ public class ModEnchantments {
     public static final RegistryObject<Enchantment> ETHEREAL_EMBRACE = ENCHANTMENTS.register("ethereal_embrace", () -> new EtherealEmbrace(Enchantment.Rarity.VERY_RARE, EnchantmentCategory.ARMOR_CHEST, new EquipmentSlot[]{EquipmentSlot.CHEST}));
     public static final RegistryObject<Enchantment> DIMENSIONAL_SHUFFLE = ENCHANTMENTS.register("dimensional_shuffle", () -> new DimensionalShuffle(Enchantment.Rarity.VERY_RARE, EnchantmentCategory.ARMOR_CHEST, new EquipmentSlot[]{EquipmentSlot.CHEST}));
     public static final RegistryObject<Enchantment> ZEN_SANCTUARY = ENCHANTMENTS.register("zen_sanctuary", () -> new ZenSanctuary(Enchantment.Rarity.VERY_RARE, EnchantmentCategory.ARMOR_CHEST, new EquipmentSlot[]{EquipmentSlot.CHEST}));
+    public static final RegistryObject<Enchantment> KINETIC_PROTECTION = ENCHANTMENTS.register("kinetic_protection", () -> new KineticProtection(Enchantment.Rarity.VERY_RARE, ModEnchantments.ELYTRA, new EquipmentSlot[]{EquipmentSlot.CHEST}));
 
 
     // CURSES REGISTRIES
