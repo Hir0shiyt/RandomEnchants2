@@ -56,6 +56,7 @@ public class ModConfig {
         public static ForgeConfigSpec.EnumValue<Restriction> etherealEmbraceConfig;
         public static ForgeConfigSpec.EnumValue<Restriction> dimensionalShuffleConfig;
         public static ForgeConfigSpec.EnumValue<Restriction> zenSanctuaryConfig;
+        public static ForgeConfigSpec.EnumValue<Restriction> kineticProtectionConfig;
 
         //curses
         public static ForgeConfigSpec.EnumValue<Restriction> breakingConfig;
@@ -183,6 +184,10 @@ public class ModConfig {
             zenSanctuaryConfig = builder.comment("Restriction for Zen Sanctuary Enchantment")
                     .comment("Extra Enchantments are Disabled by Default, use ENABLED if you want to enable them!")
                     .defineEnum("zenSanctuaryConfig", Restriction.DISABLED);
+
+            kineticProtectionConfig = builder.comment("Restriction for Kinetic Protection Enchantment")
+                    .comment("Extra Enchantments are Disabled by Default, use ENABLED if you want to enable them!")
+                    .defineEnum("kineticProtectionConfig", Restriction.DISABLED);
 
 
             builder.pop();
